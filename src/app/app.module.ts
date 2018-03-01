@@ -14,7 +14,6 @@ import { RouterModule } from '@angular/router';
 import { routes } from './routes';
 import { CoreModule } from './core/core.module';
 import { AppComponent } from './core/containers/app/app.component';
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 const modules = [
   CommonModule,
@@ -41,7 +40,7 @@ const providers = [
 ];
 
 @NgModule({
-  declarations: [PageNotFoundComponent],
+  declarations: [],
   imports: [
     ...modules,
     ...ngrxModules,
