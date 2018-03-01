@@ -5,5 +5,4 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ## Documentation required
 
 * Setting up angular cil local and global
-* Setting yarn as default package manager for angular cli 
-yarn 
+* Setting yarn as default package manager for angular cli for yarn 
