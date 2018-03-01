@@ -3,10 +3,9 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 @Component({
   selector: 'app-layout',
   template: `
-    <p>
-      layout works!
-      <ng-content></ng-content>
-    </p>
+  <mat-sidenav-container fullscreen>
+    <ng-content></ng-content>
+  </mat-sidenav-container>
   `,
   styles: []
 })

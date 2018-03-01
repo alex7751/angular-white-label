@@ -1,18 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-sidenav',
   template: `
-    <h1>Sidenav</h1>
-    <ng-content></ng-content>
+  <mat-sidenav [opened]="true">
+    <mat-nav-list>
+      <ng-content></ng-content>
+    </mat-nav-list>
+  </mat-sidenav>
   `,
   styles: []
 })
-export class SidenavComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+export class SidenavComponent {
+  @Input() open = false;
 }
