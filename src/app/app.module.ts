@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { AppComponent } from './app.component';
 import { StoreModule } from '@ngrx/store';
 import { reducers, metaReducers } from './reducers';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
@@ -13,6 +12,9 @@ import { RouterStateSerializer, StoreRouterConnectingModule } from '@ngrx/router
 import { CustomRouterStateSerializer } from './shared/utils';
 import { RouterModule } from '@angular/router';
 import { routes } from './routes';
+import { CoreModule } from './core/core.module';
+import { AppComponent } from './core/containers/app/app.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 const modules = [
   CommonModule,
@@ -20,6 +22,10 @@ const modules = [
   BrowserAnimationsModule,
   HttpClientModule,
   RouterModule.forRoot(routes, { useHash: true })
+];
+
+const appModules = [
+  CoreModule
 ];
 
 const ngrxModules = [
@@ -35,12 +41,11 @@ const providers = [
 ];
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [PageNotFoundComponent],
   imports: [
     ...modules,
-    ...ngrxModules
+    ...ngrxModules,
+    ...appModules
   ],
   providers: [
     ...providers
