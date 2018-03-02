@@ -9,7 +9,13 @@ import { Component, OnInit, Input } from '@angular/core';
     </mat-nav-list>
   </mat-sidenav>
   `,
-  styles: []
+  styles: [
+    `
+    mat-sidenav {
+      width: 300px;
+    }
+    `
+  ]
 })
 export class SidenavComponent {
   @Input() open = false;
