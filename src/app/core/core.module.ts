@@ -7,13 +7,15 @@ import { MaterialModule } from "../material";
 import { SidenavComponent } from "./components/sidenav/sidenav.component";
 import { LayoutComponent } from "./components/layout/layout.component";
 import { SidenavItemComponent } from "./components/sidenav-item/sidenav-item.component";
+import { ToolbarComponent } from "./components/toolbar/toolbar.component";
 
 export const COMPONENTS = [
     AppComponent,
     PageNotFoundComponent,
     SidenavComponent,
     LayoutComponent,
-    SidenavItemComponent
+    SidenavItemComponent,
+    ToolbarComponent
 ];
 
 @NgModule({
