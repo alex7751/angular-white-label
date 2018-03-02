@@ -8,6 +8,7 @@ import { SidenavComponent } from "./components/sidenav/sidenav.component";
 import { LayoutComponent } from "./components/layout/layout.component";
 import { SidenavItemComponent } from "./components/sidenav-item/sidenav-item.component";
 import { ToolbarComponent } from "./components/toolbar/toolbar.component";
+import { RequestService } from "./services/request/request.service";
 
 export const COMPONENTS = [
     AppComponent,
@@ -25,7 +26,8 @@ export const COMPONENTS = [
         MaterialModule
     ],
     declarations: COMPONENTS,
-    exports: COMPONENTS
+    exports: COMPONENTS,
+    providers: [RequestService]
 })
 export class CoreModule {
     static forRoot() {
