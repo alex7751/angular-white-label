@@ -1,7 +1,11 @@
-<h1>App Container</h1>
 <app-layout>
-  <app-sidenav>
-    <app-sidenav-item></app-sidenav-item>
+  <app-sidenav [open]="showSidenav$ | async">
+    <app-sidenav-item (navigate)="closeSidenav()" icon="book" hint="Hint 1">
+      Test 1
+    </app-sidenav-item>
+    <app-sidenav-item (navigate)="closeSidenav()" icon="face" hint="Hint 2">
+        Test 2
+      </app-sidenav-item>
   </app-sidenav>
   <router-outlet></router-outlet>
 </app-layout>
