@@ -1,19 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-toolbar',
   template: `
-    <p>
-      toolbar works!
-    </p>
+  <mat-toolbar color="primary">
+    <button mat-icon-button (click)="openSidenav.emit()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <ng-content></ng-content>
+  </mat-toolbar>
   `,
   styles: []
 })
-export class ToolbarComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+export class ToolbarComponent {
+  @Output() openSidenav = new EventEmitter();
 }
