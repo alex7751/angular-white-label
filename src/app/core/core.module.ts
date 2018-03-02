@@ -23,7 +23,7 @@ export const COMPONENTS = [
     imports: [
         CommonModule,
         RouterModule,
-        MaterialModule
+        MaterialModule,
     ],
     declarations: COMPONENTS,
     exports: COMPONENTS,

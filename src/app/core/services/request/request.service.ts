@@ -1,6 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpHeaders, HttpParams, HttpClient } from '@angular/common/http';
 import _each from 'lodash/fp/each'
+import { Observable } from 'rxjs/Observable';
+import { catchError } from 'rxjs/operators/catchError'
+import { map } from 'rxjs/operators/map'
 
 @Injectable()
 export class RequestService {
@@ -26,7 +29,7 @@ export class RequestService {
     _each((v, k) => this.headers.set(k, v))(this.baseHeaders);
   }
 
-  get(endpoint: string, headers = {}, params={}) {
+  get(endpoint: string, headers = {}, params = {}) {
 
     const options = {
       headers: {},
@@ -34,8 +37,33 @@ export class RequestService {
     }
     return this.http.get(this.host + endpoint, options)
   }
-  post() { }
-  put() { }
-  delete() { }
+
+  post(endpoint: string, body = {}, headers = {}, params = {}) {
+    const options = {
+      headers: {},
+      params: {}
+    };
+    return this.http.post(this.host + endpoint, body, options);
+  }
+
+  put(endpoint: string, body = {}, headers = {}, params = {}) {
+    const options = {
+      headers: {},
+      params: {}
+    }
+    return this.http.put(this.host + endpoint, options);
+  }
+
+  delete(endpoint: string, body = {}, headers = {}) {
+    const options = {
+      headers: {},
+      params: {}
+    }
+    return this.http.delete(this.host + endpoint, options)
+  }
+
+  private intercept(request: Observable<HttpClient>) {
+    //TODO: Handle 401/403 here
+  }
 
 }
